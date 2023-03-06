@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      button{
+        position: fixed;
+        left: 50%; transform: translateX(-50%);
+        display: block;
+        background-color: green;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        color: white;
+        cursor: pointer;
+      }
+      .red{
+        display: block;
+        margin: 10px auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: red;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+      #green{
+        display: block;
+        margin: 10px auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: green;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+      .container{
+        padding-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="btn()">find a green circle</button>
+    <div class="container">
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span id="green"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+      <span class="red"></span>
+    </div>
+    <script>
+        function btn() {
+  const element = document.getElementById("green");
+  element.scrollIntoView({behavior:"smooth"});
+}
+    </script>
+  </body>
+</html>

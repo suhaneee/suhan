@@ -1,0 +1,75 @@
+<!doctype HTML>
+<head>
+	<meta charset="UTF-8">
+	<title>네이버 로그인</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+	<div class="main-container">
+		<div class="main-wrap">
+		<header>
+			<div class="sel-lang-wrap">
+				<select class="lang-select">
+					<option>한국어</option>
+					<option>English</option>
+				</select>
+			</div>
+			<div class="logo-wrap">
+				<a href="https://www.naver.com/" target="_blank"><img src="./logo.png"></a>
+			</div>
+		</header>
+		<section class="login-input-section-wrap">
+			<div class="login-input-wrap">	
+				<input id="input-id" placeholder="로그인" type="text"></input>
+			</div>
+			<div class="login-input-wrap password-wrap">	
+				<input id="input-password" placeholder="비밀번호" type="password"></input>
+			</div>
+			<div class="login-button-wrap">
+				<button onclick="login()">로그인</button>
+			</div>
+			<div class="login-stay-sign-in">
+				<i class="far fa-check-circle"></i>
+				<span>로그인 상태 유지</span>
+			</div>
+		</section>
+		<section class="Easy-sgin-in-wrap">
+			<h2>더욱 간편한 로그인</h2>
+			<ul class="sign-button-list">
+				<li><button><i class="fas fa-qrcode"></i><span>QR코드 로그인</span></button></li>
+                <li><button><i class="fas fa-qrcode"></i><span>[1] 일회용 번호 로그인</span></button></li>
+				<li><button><i class="fab fa-facebook-square"></i><span>Facebook</span></button></li>
+				
+			</ul>
+			<p class="forget-msg">아이디찾기 | 비밀번호 찾기 | 회원가입</p>
+		</section>
+		<footer>
+			<div class="copyright-wrap">
+			<span>	<img src="img/logo.png"> Copyright © NAVER Corp. All Rights Reserved.</span>
+			</div>
+		</footer>
+		</div>
+	</div>
+
+    <script>
+       function login() {
+        //아이디,비밀번호 값 지정
+  const validId = "sox";
+  const validPassword = "12345";
+
+  // 아이디와 비밀번호를 가져오기
+  const inputId = document.getElementById("input-id").value;
+  const inputPassword = document.getElementById("input-password").value;
+
+  // 입력받은 아이디와 비밀번호가 정해둔 값과 일치하는지 확인
+  if (inputId === validId && inputPassword === validPassword) {
+    alert("로그인 성공");
+  } else {
+    alert("로그인 실패");
+  }
+}
+
+    </script>
+</body>

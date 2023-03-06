@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0 auto;
+    }
+    #mouseXYText{
+      position: absolute;
+      top: 45%;
+      left: 45%;
+    
+        
+    }
+</style>
+<body>
+    <div id="divbox" style="width:100%;height:600px; margin: 0px; padding: 0px;" ></div>
+    <div id="mouseXYText" > </div>
+    <script>
+         window.onload = function() {     /*마우스 포인터가 요소위에서 이동할 때 작동*/
+            document.getElementById("divbox").onmousemove = function(event) {
+                document.getElementById("mouseXYText").innerHTML = 
+                "마우스 좌표  X" + event.clientX + " , Y" + event.clientY ;
+            };}
+    </script>
+</body>
+</html>

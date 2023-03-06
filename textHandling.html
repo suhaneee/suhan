@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextHandling</title>
+</head>
+<style>
+  body{
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+ 
+    button{
+        background: #D9D9D9;
+        border-radius: 5px;
+        width: 184px;
+        height: 48px;
+        margin: 30px auto;
+        text-align: center;
+        align-items: center;
+        line-height: 48px;
+        display: block;
+        border: 0px ;
+        cursor: pointer;
+        
+    }
+    #Login{
+       position: absolute;
+        border-radius: 5px;
+        width: 184px;
+        height: 48px;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        line-height: 48px;
+        border: 4px solid;
+        display: block;
+        left:25%;
+      
+        
+        
+        
+    }
+    span{
+        background: #D9D9D9;
+        border-radius: 5px;
+        width: 184px;
+        height: 48px;
+        margin: 30px auto;
+        text-align: center;
+        align-items: center;
+        line-height: 48px;
+        display: block;
+        border: 0px ;
+        cursor: pointer;
+        
+    }
+</style>
+<body>
+  <div id="Login">로그인</div>
+    <div >
+    
+    <button  type="button" id="text" onclick="ChangeText()">텍스트 변경</button>
+    <button  type="button" id="color"  onclick="ChangeColor()">색상 변경</button>
+    <button  type="button" id="add"  onclick="ChangeAdd()">요소 추가</button>
+    <button  type="button" id="delete"  onclick="ChangeDelete()">요소 삭제</button>
+    <button  type="button" id="confirm"  onclick="ChangeConfirm()">텍스트 확인</button>
+</div>
+
+<script>
+    //로그인 로그아웃 변경
+    function ChangeText()  {
+  const btnElement = document.getElementById("Login");
+  if(btnElement.innerText == '로그인'){
+    btnElement.innerText = '로그아웃';
+  } else{
+    btnElement.innerText = '로그인';
+  }
+  }
+//색상변경
+document.getElementById("color").onclick = function(){
+ document.getElementById("Login").style.borderColor="greenyellow";
+ document.getElementById("Login").style.color="greenyellow";
+        };
+
+//요소추가
+  function ChangeAdd() {
+  // 1. <div> element 만들기
+  const newButton = document.createElement('span');
+  
+  
+  
+  // 2. <div>에 들어갈 text node 만들기
+  const newText = document.createTextNode('텍스트 상자');
+  
+  // 3. <div>에 text node 붙이기
+  newButton.appendChild(newText);
+  
+  // 4. <body>에 1에서 만든 <div> element 붙이기
+  document.body.appendChild(newButton);
+}
+//추가 요소 삭제
+function ChangeDelete() {
+  const buttons = document.querySelectorAll('span');
+  
+  
+
+  const lastButton = buttons[buttons.length - 1];
+  lastButton.remove();
+
+  if (buttons.length === 1) {
+    alert('마지막 텍스트입니다.');
+  }
+}
+
+//버튼 클릭시 alert 창 출력
+function ChangeConfirm() {
+  alert('텍스트 확인')
+}
+</script>
+</body>
+</html>

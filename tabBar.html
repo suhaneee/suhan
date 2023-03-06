@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS 탭바</title>
+        <link rel="stylesheet" href="tab.css">
+    </head>
+    <style>
+      *{padding: 0; margin: 0;}
+          .gallery{
+              width: 700px; overflow: hidden; border: 1px solid #ccc; margin: 30px auto;
+          }
+          .gallery .tabBtn{
+              width: 100%; height: 50px;
+              border-bottom: 1px solid #ccc;
+              background-color: #ededed;
+          }
+​
+          .gallery .tabBtn button{
+              cursor: pointer;
+              float: left;
+              display: block;
+              width: 100px; height: 100%; background-color: transparent; border: none;
+              font-size: 18px; color: #333;
+          }
+          .gallery .tabBtn button:hover{
+              background-color: #ddd;
+          }
+          .gallery .tabBtn button.active{
+              background-color: #ccc;
+          }
+​
+          .gallery .tabContents{
+              width: 100%; overflow: hidden; padding: 20px; box-sizing: border-box;
+          }
+          .gallery .tabContents > div{
+              display: none;
+              animation: fadeEffect 0.6s;
+          }
+          @keyframes fadeEffect{
+              from{opacity: 0;} /* 시작점에서는 투명도 0 */
+              to{opacity: 1;} /* 시작점에서는 투명도 1 */
+          }
+​
+          .gallery .tabContents h3{
+              width: 100%; height: 50px;
+          }
+          .gallery .tabContents p{
+              width: 100%; height: 30px;
+          }
+          .gallery .tabContents img{
+              display: block; width: 100%; height: 430px;
+              object-fit: cover; /* 사이즈 크기 동일하게 비율고정으로 꽉 채움 */
+          }
+    </style>
+    <body>
+        <div class="gallery">
+            <div class="tabBtn">
+                <button class="tabLink" id="tab_london">London</button>
+                <button class="tabLink" id="tab_paris">Paris</button>
+                <button class="tabLink" id="tab_barcelona">Barcelona</button>
+            </div>
+            <div class="tabContents">
+                <div class="tabContent" id="london">
+                    <h3>런던</h3>
+                    <p>영국의 수도</p>
+                    <img src="https://cdn.pixabay.com/photo/2017/06/11/18/03/london-2393098_960_720.jpg" alt="런던이미지">
+                </div>
+                <div class="tabContent" id="paris">
+                    <h3>파리</h3>
+                    <p>프랑스의 수도</p>
+                    <img src="https://cdn.pixabay.com/photo/2016/11/18/19/01/paris-1836415_960_720.jpg" alt="파리이미지">
+                </div>
+                <div class="tabContent" id="barcelona">
+                    <h3>바르셀로나</h3>
+                    <p>스페인의 제2의도시</p>
+                    <img src="https://cdn.pixabay.com/photo/2019/01/28/14/52/barcelona-3960591_960_720.jpg" alt="바르셀로나사진">
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById("tab_london").onclick = function(){
+                const element = document.getElementById('london');
+                element.style.display = 'block';
+            }
+            document.getElementById("tab_paris").onclick = function(){
+                const element = document.getElementById('paris');
+                element.style.display = 'block';
+            }
+            document.getElementById("tab_barcelona").onclick = function(){
+                const element = document.getElementById('barcelona');
+                element.style.display = 'block';
+            }
+
+        </script>
+    </body>
+</html>

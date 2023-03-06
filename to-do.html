@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: block;
+            align-items: center;
+            margin-bottom: 10px;
+            text-align: center;
+            margin: 50px auto;
+           
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To Do List</h1>
+      <input type="text" id="new-item" placeholder="오늘의 할 일 추가하기">
+      <button id="add-btn">추가</button>
+    </div>
+    <ul id="todo-list">
+    </ul>
+
+    <script>
+      const newItemInput = document.getElementById('new-item');
+      const addBtn = document.getElementById('add-btn');
+      const todoList = document.getElementById('todo-list');
+
+      // 새로운 요소 추가 함수
+      function addItem(text) {
+        const item = document.createElement('li');
+        const span = document.createElement('span');
+        span.textContent = text;
+
+        // 삭제 버튼 추가
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = '삭제';
+        deleteBtn.addEventListener('click', function () {
+          item.remove();
+        });
+
+        // 완료 버튼 추가
+        const completeBtn = document.createElement('button');
+        completeBtn.textContent = '완료';
+        completeBtn.addEventListener('click', function () {
+          span.style.textDecoration = 'line-through';
+        });
+
+        // 미완료 버튼 추가
+        const incompleteBtn = document.createElement('button');
+        incompleteBtn.textContent = '미완료';
+        incompleteBtn.addEventListener('click', function () {
+          span.style.textDecoration = 'none';
+        });
+
+        item.appendChild(span);
+        item.appendChild(deleteBtn);
+        item.appendChild(completeBtn);
+        item.appendChild(incompleteBtn);
+        todoList.appendChild(item);
+      }
+
+      // 새로운 요소 추가
+      addBtn.addEventListener('click', function () {
+        const text = newItemInput.value.trim();
+
+        if (text) {
+          addItem(text);
+          newItemInput.value = '';
+        }
+      });
+
+      // Enter 키로 추가
+      newItemInput.addEventListener('keydown', function (event) {
+        const text = newItemInput.value.trim();
+
+        if (event.key === 'Enter' && text) {
+          addItem(text);
+          newItemInput.value = '';
+        }
+      });
+    </script>
+  </body>
+</html>
