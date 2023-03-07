@@ -93,9 +93,7 @@ document.getElementById("color").onclick = function(){
   // 1. <div> element 만들기
   const newButton = document.createElement('span');
   
-  
-  
-  // 2. <div>에 들어갈 text node 만들기
+ // 2. <div>에 들어갈 text node 만들기
   const newText = document.createTextNode('텍스트 상자');
   
   // 3. <div>에 text node 붙이기
@@ -113,7 +111,7 @@ function ChangeDelete() {
   const lastButton = buttons[buttons.length - 1];
   lastButton.remove();
 
-  if (buttons.length === 1) {
+  if (buttons.length === 2) {
     alert('마지막 텍스트입니다.');
   }
 }

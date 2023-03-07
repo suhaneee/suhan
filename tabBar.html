@@ -79,18 +79,26 @@
             </div>
         </div>
         <script>
-            document.getElementById("tab_london").onclick = function(){
-                const element = document.getElementById('london');
-                element.style.display = 'block';
-            }
-            document.getElementById("tab_paris").onclick = function(){
-                const element = document.getElementById('paris');
-                element.style.display = 'block';
-            }
-            document.getElementById("tab_barcelona").onclick = function(){
-                const element = document.getElementById('barcelona');
-                element.style.display = 'block';
-            }
+           const london = document.getElementById('london');
+           const paris = document.getElementById('paris');
+           const barcelona = document.getElementById('barcelona');
+
+          document.getElementById("tab_london").onclick = function(){
+          london.style.display = 'block';
+          paris.style.display = 'none';
+          barcelona.style.display = 'none';
+                   }
+          document.getElementById("tab_paris").onclick = function(){
+          london.style.display = 'none';
+          paris.style.display = 'block';
+        barcelona.style.display = 'none';
+       }
+          document.getElementById("tab_barcelona").onclick = function(){
+          london.style.display = 'none';
+          paris.style.display = 'none';
+          barcelona.style.display = 'block';
+}
+
 
         </script>
     </body>

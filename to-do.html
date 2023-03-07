@@ -52,7 +52,9 @@
             margin: 50px auto;
            
         }
-        
+        li button{
+            margin: 10px;
+        }
     </style>
   </head>
   <body>
@@ -85,9 +87,18 @@
         // 완료 버튼 추가
         const completeBtn = document.createElement('button');
         completeBtn.textContent = '완료';
+
         completeBtn.addEventListener('click', function () {
-          span.style.textDecoration = 'line-through';
+        const span = this.parentElement.querySelector('span');
+         span.style.textDecoration = 'line-through';
+         const timeSpan = document.createElement('span');
+         timeSpan.textContent = ` (${new Date().toLocaleTimeString()})`;
+         this.parentElement.appendChild(timeSpan);
+         this.style.display = 'none';
+
+          
         });
+        //완료버튼 클릭시 현재시간 작성되고 버튼은 사라지게
 
         // 미완료 버튼 추가
         const incompleteBtn = document.createElement('button');
